@@ -20,9 +20,9 @@ fs.appendFile('server.log',log +'\n',(err)=>{
 next();
 })
 
-app.use((req,res,next)=>{
-  res.render('maintainence.hbs');
-})
+//app.use((req,res,next)=>{
+  //res.render('maintainence.hbs');
+//})
 
 app.use(express.static(__dirname+'/public'));//express middleware -setting up a static directory, __dirname comtains the project directory path
 
@@ -41,6 +41,12 @@ res.render('about.hbs',{
   currentyear:new Date().getFullYear()
 });
 })
+
+app.get('/projects',(req,res)=>{
+//  res.send('About Page');
+res.render('projects.hbs');
+})
+
 
 app.get('/bad',(req,res)=>{
   res.send({
