@@ -47,5 +47,5 @@ app.get('/bad',(req,res)=>{
     errormessage:"This is a bad code"
   });
 })
-app.listen(port,()=>{console.log('server is up at port ' `${port}`)}); //This is used to specify the port or to bind a port with application. Application will listen to this port on localhost(in this case)
+app.listen(port,()=>{console.log('server is up at port ' + `${port}`)}); //This is used to specify the port or to bind a port with application. Application will listen to this port on localhost(in this case)
 //for requests
