@@ -1,7 +1,9 @@
+const port=process.env.PORT || 3000; //process.env conatins all environment varibles of your syetem
 const express=require('express');  // adding express library to code
 const hbs=require('hbs'); // This library can be used to inject dynamic content into webpages
 const app=express(); //creating express app
 const fs=require('fs');
+
 
 hbs.registerPartials(__dirname+'/views/partials') //This is to register partials
 
@@ -45,5 +47,5 @@ app.get('/bad',(req,res)=>{
     errormessage:"This is a bad code"
   });
 })
-app.listen(3000,()=>{console.log('server is up at port 3000')}); //This is used to specify the port or to bind a port with application. Application will listen to this port on localhost(in this case)
+app.listen(port,()=>{console.log('server is up at port ' `${port}`)}); //This is used to specify the port or to bind a port with application. Application will listen to this port on localhost(in this case)
 //for requests
